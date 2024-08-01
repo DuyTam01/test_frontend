@@ -26,5 +26,5 @@ const chemicalSlice = createSlice({
     }
 })
 
-export const {  deleteChemicals } = chemicalSlice.actions
+export const {deleteChemicals} = chemicalSlice.actions
 export default chemicalSlice.reducer

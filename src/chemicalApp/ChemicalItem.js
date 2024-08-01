@@ -2,10 +2,11 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Container, ListGroup, ListGroupItem, Table } from 'reactstrap'
 import AddChemical from './AddChemical'
+import { deleteChemicals } from '../redux/chemicalSlice'
 
 
 export default function ChemicalItem() {
-  const {deleteChemicals } = useDispatch()
+  const  dispatch = useDispatch()
   const { chemicals } = useSelector(state => state.chemicals)
   console.log(chemicals)
   return (
@@ -42,7 +43,7 @@ export default function ChemicalItem() {
                     {item.formula}
                   </td>
                   <td>
-                    <Button color='danger' onClick={()=>(deleteChemicals(item.id))} >X</Button>
+                    <Button color='danger' onClick={()=>dispatch((deleteChemicals(item.id)))} >X</Button>
                   </td>
                 </tr>
               )}
